@@ -1,0 +1,39 @@
+.application-container {
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-attachment: fixed;
+  background-size: 100% auto;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 600px) {
+    &.light {
+      background-image: url("../assets/bg-desktop-light.jpg");
+    }
+
+    &.dark {
+      background-image: url("../assets/bg-desktop-dark.jpg");
+    }
+  }
+
+  @media (max-width: 599px) {
+    &.light {
+      background-image: url("../assets/bg-mobile-light.jpg");
+    }
+
+    &.dark {
+      background-image: url("../assets/bg-mobile-dark.jpg");
+    }
+  }
+
+  .todo-container {
+    height: 50vh;
+    width: 50vw;
+
+    .todo-item {
+      border-bottom: 2px red solid;
+    }
+  }
+}

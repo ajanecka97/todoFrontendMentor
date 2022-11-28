@@ -1,0 +1,21 @@
+:host {
+  .todo-item {
+    display: flex;
+    flex-direction: row;
+    background-color: gray;
+
+    .complete-checkbox {
+      flex-grow: 0;
+      margin: 8px 16px !important;
+    }
+
+    .todo-title {
+      flex-grow: 1;
+      padding: 8px 16px 8px 0px;
+    }
+  }
+
+  &:not(:last-child) .todo-item {
+    border-bottom: 1px white solid;
+  }
+}
