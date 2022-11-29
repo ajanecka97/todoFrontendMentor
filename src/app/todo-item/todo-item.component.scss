@@ -2,20 +2,49 @@
   .todo-item {
     display: flex;
     flex-direction: row;
-    background-color: gray;
+    align-items: center;
+    background-color: #25283b;
 
-    .complete-checkbox {
+    .complete-button {
       flex-grow: 0;
       margin: 8px 16px !important;
+      background: none;
+      border: 1px #383a4f solid;
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
     }
 
     .todo-title {
       flex-grow: 1;
-      padding: 8px 16px 8px 0px;
+      color: #cdcfe6;
+      padding: 8px 0px 8px 0px;
+    }
+
+    .remove-button {
+      flex-grow: 0;
+      margin: 8px 16px;
+      background: none;
+      border: none;
+      display: none;
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      .complete-button {
+        background-clip: padding-box;
+        position: relative;
+        border-color: #6ebff7;
+      }
+
+      .remove-button {
+        display: block;
+      }
     }
   }
 
   &:not(:last-child) .todo-item {
-    border-bottom: 1px white solid;
+    border-bottom: 1px #383a4f solid;
   }
 }
