@@ -3,3 +3,9 @@ export interface TodoItem {
   isCompleted: boolean;
   title: string;
 }
+
+export enum TodoFilter {
+  All,
+  Active,
+  Completed,
+}

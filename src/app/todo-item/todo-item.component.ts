@@ -1,3 +1,4 @@
+import { TodoService } from '../todo.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { TodoItem } from '../app.models';
 
@@ -7,9 +8,17 @@ import { TodoItem } from '../app.models';
   styleUrls: ['./todo-item.component.scss'],
 })
 export class TodoItemComponent implements OnInit {
-  @Input() item!: TodoItem;
+  @Input() public item!: TodoItem;
+  @Input() public inputMode = false;
 
-  constructor() {}
+  public newTodoTitle = '';
+
+  constructor(private todoService: TodoService) {}
 
   ngOnInit(): void {}
+
+  public addTodo() {
+    this.todoService.addTodo(this.newTodoTitle);
+    this.newTodoTitle = '';
+  }
 }

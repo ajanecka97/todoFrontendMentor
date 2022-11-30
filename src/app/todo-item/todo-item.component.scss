@@ -18,7 +18,14 @@
     .todo-title {
       flex-grow: 1;
       color: #cdcfe6;
+      background: none;
+      border: none;
       padding: 8px 0px 8px 0px;
+      margin: 16px 16px !important;
+
+      &:focus-visible {
+        outline: none;
+      }
     }
 
     .remove-button {
@@ -26,7 +33,7 @@
       margin: 8px 16px;
       background: none;
       border: none;
-      display: none;
+      visibility: hidden;
     }
 
     &:hover {
@@ -39,7 +46,7 @@
       }
 
       .remove-button {
-        display: block;
+        visibility: visible;
       }
     }
   }

@@ -2,8 +2,19 @@
   <button class="complete-button">
     <img src="../../assets/icon-check.svg" />
   </button>
-  <p class="todo-title">{{ item.title }}</p>
+  <p *ngIf="!inputMode; else todoIput" class="todo-title">
+    {{ item.title }}
+  </p>
   <button class="remove-button">
     <img src="../../assets/icon-cross.svg" />
   </button>
 </div>
+
+<ng-template #todoIput>
+  <input
+    class="todo-title"
+    type="text"
+    placeholder="Create a new todo..."
+    [(ngModel)]="newTodoTitle"
+    (keyup.enter)="addTodo()"
+/></ng-template>

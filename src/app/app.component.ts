@@ -1,5 +1,5 @@
+import { TodoService } from './todo.service';
 import { Component } from '@angular/core';
-import { TodoItem } from './app.models';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +9,5 @@ import { TodoItem } from './app.models';
 export class AppComponent {
   title = 'todoFrontendMentor';
 
-  public items: TodoItem[] = [
-    { id: 1, title: 'item 1', isCompleted: false },
-    { id: 2, title: 'item 2', isCompleted: false },
-    { id: 3, title: 'item 3', isCompleted: true },
-  ];
+  constructor(public todoService: TodoService) {}
 }

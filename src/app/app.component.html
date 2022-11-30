@@ -1,7 +1,11 @@
 <div class="application-container dark">
+  <div class="todo-header">
+    <h1>TODO</h1>
+  </div>
+  <app-todo-item class="todo-input" [inputMode]="true"></app-todo-item>"
   <div class="todo-container">
     <app-todo-item
-      *ngFor="let item of items"
+      *ngFor="let item of todoService.todos$ | async"
       [item]="item"
       class="todo-item"
     ></app-todo-item>
