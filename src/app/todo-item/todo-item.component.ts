@@ -13,7 +13,12 @@ export class TodoItemComponent implements OnInit {
 
   public newTodoTitle = '';
 
-  constructor(private todoService: TodoService) {}
+  public get completedClass() {
+    if (this.item == null) return '';
+    return this.item.isCompleted ? 'completed' : '';
+  }
+
+  constructor(public todoService: TodoService) {}
 
   ngOnInit(): void {}
 

@@ -13,6 +13,10 @@
       border-radius: 50%;
       width: 25px;
       height: 25px;
+
+      img {
+        visibility: hidden;
+      }
     }
 
     .todo-title {
@@ -43,10 +47,28 @@
         background-clip: padding-box;
         position: relative;
         border-color: #6ebff7;
+        cursor: pointer;
       }
 
       .remove-button {
         visibility: visible;
+        cursor: pointer;
+      }
+    }
+
+    &.completed {
+      .todo-title {
+        text-decoration: line-through;
+      }
+
+      .complete-button {
+        background-clip: padding-box;
+        position: relative;
+        border-color: #6ebff7;
+
+        img {
+          visibility: visible;
+        }
       }
     }
   }

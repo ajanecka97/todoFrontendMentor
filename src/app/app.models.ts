@@ -5,7 +5,7 @@ export interface TodoItem {
 }
 
 export enum TodoFilter {
-  All,
-  Active,
-  Completed,
+  All = 'All',
+  Active = 'Active',
+  Completed = 'Completed',
 }

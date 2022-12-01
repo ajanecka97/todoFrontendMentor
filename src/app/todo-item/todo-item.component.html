@@ -1,11 +1,15 @@
-<div class="todo-item">
-  <button class="complete-button">
+<div class="todo-item" [class]="completedClass">
+  <button class="complete-button" (click)="todoService.toggleTodo(item)">
     <img src="../../assets/icon-check.svg" />
   </button>
   <p *ngIf="!inputMode; else todoIput" class="todo-title">
     {{ item.title }}
   </p>
-  <button class="remove-button">
+  <button
+    *ngIf="!inputMode"
+    class="remove-button"
+    (click)="todoService.removeTodo(item)"
+  >
     <img src="../../assets/icon-cross.svg" />
   </button>
 </div>
