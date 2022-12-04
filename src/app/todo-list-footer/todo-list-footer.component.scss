@@ -1,3 +1,5 @@
+@import "../../variables.scss";
+
 .footer {
   display: flex;
   justify-content: space-between;
@@ -6,4 +8,9 @@
   color: #777;
   background-color: #25283b;
   border-radius: 0 0 5px 5px;
+
+  .item-count {
+    font-size: 14px;
+    color: $dark-gray-blue-6;
+  }
 }

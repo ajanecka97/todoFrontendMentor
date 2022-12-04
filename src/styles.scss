@@ -15,12 +15,21 @@ body {
 }
 
 .text-button {
+  font-size: 14px;
+  font-weight: $font-weight-1;
+  font-family: $font-family-1;
+  padding: 0px 10px;
   background: none;
   border: none;
   cursor: pointer;
   outline: none;
+  color: $dark-gray-blue-6;
 
   &.active-filter {
-    color: #6ebff7;
+    color: $color-primary;
+  }
+
+  &:hover:not(.active-filter) {
+    color: $dark-gray-blue-4;
   }
 }

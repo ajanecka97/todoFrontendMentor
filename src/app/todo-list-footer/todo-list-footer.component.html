@@ -1,6 +1,11 @@
 <div class="footer">
-  <div>{{ todoService.activeTodosCount$ | async }} items left</div>
-  <div *ngIf="todoService.activeFilter$ | async; let filter">
+  <div class="item-count">
+    {{ todoService.activeTodosCount$ | async }} items left
+  </div>
+  <div
+    *ngIf="todoService.activeFilter$ | async; let filter"
+    class="filter-container"
+  >
     <button
       class="text-button"
       [class.active-filter]="filter === todoFilter.All"
