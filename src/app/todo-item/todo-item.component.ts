@@ -8,7 +8,7 @@ import { TodoItem } from '../app.models';
   styleUrls: ['./todo-item.component.scss'],
 })
 export class TodoItemComponent implements OnInit {
-  @Input() public item!: TodoItem;
+  @Input() public item?: TodoItem;
   @Input() public inputMode = false;
 
   public newTodoTitle = '';

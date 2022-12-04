@@ -4,6 +4,7 @@
     flex-direction: row;
     align-items: center;
     background-color: #25283b;
+    border-bottom: 1px #383a4f solid;
 
     .complete-button {
       flex-grow: 0;
@@ -71,9 +72,13 @@
         }
       }
     }
+
+    &.input {
+      border-radius: 5px;
+    }
   }
 
-  &:not(:last-child) .todo-item {
-    border-bottom: 1px #383a4f solid;
+  &:first-child .todo-item {
+    border-radius: 5px 5px 0px 0px;
   }
 }

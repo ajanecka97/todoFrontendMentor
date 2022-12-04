@@ -2,6 +2,7 @@ import { TodoFilter, TodoItem } from './app.models';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, combineLatest, map, Observable, tap } from 'rxjs';
 import { LocalStorageService } from './local-storage.service';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Injectable({
   providedIn: 'root',
@@ -13,6 +14,8 @@ export class TodoService {
 
   private todosSubject = new BehaviorSubject<TodoItem[]>([]);
   private filterSubject = new BehaviorSubject<TodoFilter>(TodoFilter.All);
+
+  private nextId: number;
 
   constructor(localStorageService: LocalStorageService) {
     this.todos$ = combineLatest([this.todosSubject, this.filterSubject]).pipe(
@@ -37,6 +40,11 @@ export class TodoService {
     this.todos$.subscribe((todos) => {
       localStorageService.set('todos', todos);
     });
+
+    this.nextId =
+      this.todosSubject
+        .getValue()
+        .reduce((acc, current) => (acc > current.id ? acc : current.id), 0) + 1;
   }
 
   public addTodo(todoTitle: string) {
@@ -44,7 +52,7 @@ export class TodoService {
     this.todosSubject.next([
       ...todos,
       {
-        id: todos.length + 1,
+        id: this.nextId++,
         title: todoTitle,
         isCompleted: false,
       },
@@ -63,6 +71,13 @@ export class TodoService {
         t.id === todo.id ? { ...t, isCompleted: !t.isCompleted } : t
       )
     );
+  }
+
+  public moveItem(event: CdkDragDrop<string[]>) {
+    const todos = this.todosSubject.getValue();
+    moveItemInArray(todos, event.previousIndex, event.currentIndex);
+    console.log(event, todos);
+    this.todosSubject.next(todos);
   }
 
   public clearCompleted() {
