@@ -31,6 +31,14 @@
     }
   }
 
+  .todo-header {
+    width: 50vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   .todo-container {
     height: 50vh;
     width: 50vw;
@@ -38,6 +46,7 @@
 
   .todo-input {
     width: 50vw;
+    margin-bottom: 20px;
   }
 }
 

@@ -1,8 +1,10 @@
 <div class="application-container dark">
   <div class="todo-header">
     <h1>TODO</h1>
+    <app-theme-switcher></app-theme-switcher>
   </div>
-  <app-todo-item class="todo-input" [inputMode]="true"></app-todo-item>"
+  <app-todo-item class="todo-input" [inputMode]="true" appThemable>
+  </app-todo-item>
   <div class="todo-container">
     <div
       cdkDropList
@@ -17,7 +19,7 @@
         cdkDrag
         [cdkDragData]="item"
       >
-        <app-todo-item [item]="item"></app-todo-item>
+        <app-todo-item [item]="item" appThemable></app-todo-item>
       </div>
     </div>
     <app-todo-list-footer></app-todo-list-footer>

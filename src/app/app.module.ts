@@ -8,9 +8,11 @@ import { TodoListFooterComponent } from './todo-list-footer/todo-list-footer.com
 import { NgScrollbarModule } from 'ngx-scrollbar';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ThemeSwitcherComponent } from './theme-switcher/theme-switcher.component';
+import { ThemableDirective } from './themable.directive';
 
 @NgModule({
-  declarations: [AppComponent, TodoItemComponent, TodoListFooterComponent],
+  declarations: [AppComponent, TodoItemComponent, TodoListFooterComponent, ThemeSwitcherComponent, ThemableDirective],
   imports: [BrowserModule, FormsModule, NgScrollbarModule, DragDropModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
