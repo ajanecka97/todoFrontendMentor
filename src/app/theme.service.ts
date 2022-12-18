@@ -17,12 +17,12 @@ export class ThemeService {
 
     this.currentTheme$.subscribe((theme) => {
       localStorage.setItem('theme', theme);
+      document.body.setAttribute('data-theme', theme);
     });
   }
 
   public toggleTheme(): void {
     const currentTheme = this.currentThemeSubject.getValue();
-    console.log('currentTheme: ', currentTheme);
     if (currentTheme === 'light') {
       this.currentThemeSubject.next('dark');
     } else {

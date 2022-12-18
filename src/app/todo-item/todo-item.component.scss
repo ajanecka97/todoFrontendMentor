@@ -24,7 +24,6 @@
 
     .todo-title {
       flex-grow: 1;
-      color: #cdcfe6;
       background: none;
       border: none;
       padding: 8px 0px 8px 0px;
@@ -50,7 +49,7 @@
         position: relative;
         cursor: pointer;
         &:hover {
-          border-color: #6ebff7;
+          border-color: $color-primary;
         }
       }
 
@@ -67,7 +66,7 @@
 
       .complete-button {
         position: relative;
-        border-color: #6ebff7;
+        border-color: $color-primary;
         background-image: $button-gradient;
 
         img {
@@ -86,22 +85,22 @@
     }
   }
 
-  &:first-child .todo-item {
-    border-radius: 5px 5px 0px 0px;
-  }
-
   &[data-theme="light"] {
     .todo-item {
-      background-color: #f5f5f5;
-      border-bottom: 1px #e0e0e0 solid;
+      background-color: $gray-blue-1;
+      border-bottom: 1px $gray-blue-2 solid;
+
+      .todo-title {
+        color: $gray-blue-4;
+      }
 
       .complete-button {
-        border-color: #e0e0e0;
+        border-color: $gray-blue-2;
       }
 
       &.completed {
         .todo-title {
-          color: #424242;
+          color: $gray-blue-3;
         }
       }
     }
@@ -109,26 +108,24 @@
 
   &[data-theme="dark"] {
     .todo-item {
-      background-color: #25283b;
-      border-bottom: 1px #383a4f solid;
+      background-color: $dark-gray-blue-2;
+      border-bottom: 1px $dark-gray-blue-7 solid;
 
-      .complete-button {
-        border-color: #383a4f;
+      .todo-title {
+        color: $dark-gray-blue-3;
       }
 
-      &:hover {
-        .complete-button {
-          border-color: #6ebff7;
-        }
+      .complete-button {
+        border-color: $dark-gray-blue-7;
       }
 
       &.completed {
         .todo-title {
-          color: $dark-gray-blue-5;
+          color: $dark-gray-blue-6;
         }
 
         .complete-button {
-          border-color: #6ebff7;
+          border-color: $color-primary;
           background-image: $button-gradient;
         }
       }

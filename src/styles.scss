@@ -11,25 +11,42 @@ body {
   app-root {
     height: 100vh;
     width: 100vw;
+
+    .text-button {
+      font-size: 14px;
+      font-weight: $font-weight-1;
+      font-family: $font-family-1;
+      padding: 0px 10px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      outline: none;
+
+      &.active-filter {
+        color: $color-primary;
+      }
+    }
   }
-}
 
-.text-button {
-  font-size: 14px;
-  font-weight: $font-weight-1;
-  font-family: $font-family-1;
-  padding: 0px 10px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  outline: none;
-  color: $dark-gray-blue-6;
+  // Light theme for global components
+  &[data-theme="light"] {
+    .text-button {
+      color: $gray-blue-3;
 
-  &.active-filter {
-    color: $color-primary;
+      &:hover:not(.active-filter) {
+        color: $gray-blue-4;
+      }
+    }
   }
 
-  &:hover:not(.active-filter) {
-    color: $dark-gray-blue-4;
+  // Dark theme for global components
+  &[data-theme="dark"] {
+    .text-button {
+      color: $dark-gray-blue-3;
+
+      &:hover:not(.active-filter) {
+        color: $gray-blue-3;
+      }
+    }
   }
 }
