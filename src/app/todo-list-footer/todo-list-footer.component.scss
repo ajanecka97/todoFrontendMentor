@@ -1,7 +1,7 @@
 @import "../../variables.scss";
 
 :host {
-  .footer {
+  .footer-main {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -14,17 +14,46 @@
     }
   }
 
+  .footer-mobile {
+    display: none;
+  }
+
   &[data-theme="light"] {
-    .footer {
+    .footer-main {
+      background-color: $gray-blue-1;
+      color: $gray-blue-4;
+    }
+
+    .footer-mobile {
       background-color: $gray-blue-1;
       color: $gray-blue-4;
     }
   }
 
   &[data-theme="dark"] {
-    .footer {
+    .footer-main {
       background-color: $dark-gray-blue-2;
       color: $dark-gray-blue-3;
+    }
+
+    .footer-mobile {
+      background-color: $dark-gray-blue-2;
+      color: $dark-gray-blue-3;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .footer-main .filter-container {
+      display: none;
+    }
+
+    .footer-mobile {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      padding: 10px;
+      border-radius: 0 0 5px 5px;
     }
   }
 }

@@ -5,18 +5,22 @@
   background-position: top center;
   background-attachment: fixed;
   background-size: 100% auto;
-  height: 100%;
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   align-items: center;
+  overflow: auto;
 
   .todo-header {
     width: 50vw;
+    margin: 40px 0px 20px 0px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    color: white;
+    letter-spacing: 16px;
   }
 
   .todo-container {
@@ -29,6 +33,23 @@
     margin-bottom: 20px;
   }
 
+  .hint {
+    padding: 40px 0px;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .attribution {
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    font-size: 11px;
+    text-align: center;
+    a {
+      color: $color-primary;
+    }
+  }
+
   &[data-theme="light"] {
     background-color: $gray-1;
     @media (min-width: 768px) {
@@ -37,6 +58,14 @@
 
     @media (max-width: 767px) {
       background-image: url("../assets/bg-mobile-light.jpg");
+    }
+
+    .hint {
+      color: $gray-blue-3;
+    }
+
+    .attribution {
+      color: black;
     }
   }
 
@@ -48,6 +77,14 @@
 
     @media (max-width: 767px) {
       background-image: url("../assets/bg-mobile-dark.jpg");
+    }
+
+    .hint {
+      color: $dark-gray-blue-6;
+    }
+
+    .attribution {
+      color: white;
     }
   }
 }
@@ -69,4 +106,22 @@
 
 .cdk-drop-list-dragging .todo-item:not(.cdk-drag-placeholder) {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+@media (max-width: 767px) {
+  .application-container {
+    justify-content: flex-start;
+
+    .todo-header {
+      width: 90vw;
+    }
+
+    .todo-container {
+      width: 90vw;
+    }
+
+    .todo-input {
+      width: 90vw;
+    }
+  }
 }
