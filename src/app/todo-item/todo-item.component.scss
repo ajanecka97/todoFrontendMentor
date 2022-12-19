@@ -1,3 +1,5 @@
+@import "../../variables.scss";
+
 :host {
   .todo-item {
     display: flex;
@@ -22,7 +24,6 @@
 
     .todo-title {
       flex-grow: 1;
-      color: #cdcfe6;
       background: none;
       border: none;
       padding: 8px 0px 8px 0px;
@@ -45,10 +46,11 @@
       cursor: pointer;
 
       .complete-button {
-        background-clip: padding-box;
         position: relative;
-        border-color: #6ebff7;
         cursor: pointer;
+        &:hover {
+          border-color: $color-primary;
+        }
       }
 
       .remove-button {
@@ -63,9 +65,9 @@
       }
 
       .complete-button {
-        background-clip: padding-box;
         position: relative;
-        border-color: #6ebff7;
+        border-color: $color-primary;
+        background-image: $button-gradient;
 
         img {
           visibility: visible;
@@ -75,10 +77,58 @@
 
     &.input {
       border-radius: 5px;
+
+      input {
+        font-size: $font-size-1;
+        caret-color: $color-primary;
+      }
     }
   }
 
-  &:first-child .todo-item {
-    border-radius: 5px 5px 0px 0px;
+  &[data-theme="light"] {
+    .todo-item {
+      background-color: $gray-blue-1;
+      border-bottom: 1px $gray-blue-2 solid;
+
+      .todo-title {
+        color: $gray-blue-4;
+      }
+
+      .complete-button {
+        border-color: $gray-blue-2;
+      }
+
+      &.completed {
+        .todo-title {
+          color: $gray-blue-3;
+        }
+      }
+    }
+  }
+
+  &[data-theme="dark"] {
+    .todo-item {
+      background-color: $dark-gray-blue-2;
+      border-bottom: 1px $dark-gray-blue-7 solid;
+
+      .todo-title {
+        color: $dark-gray-blue-3;
+      }
+
+      .complete-button {
+        border-color: $dark-gray-blue-7;
+      }
+
+      &.completed {
+        .todo-title {
+          color: $dark-gray-blue-6;
+        }
+
+        .complete-button {
+          border-color: $color-primary;
+          background-image: $button-gradient;
+        }
+      }
+    }
   }
 }

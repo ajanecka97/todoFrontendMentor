@@ -76,7 +76,6 @@ export class TodoService {
   public moveItem(event: CdkDragDrop<string[]>) {
     const todos = this.todosSubject.getValue();
     moveItemInArray(todos, event.previousIndex, event.currentIndex);
-    console.log(event, todos);
     this.todosSubject.next(todos);
   }
 
