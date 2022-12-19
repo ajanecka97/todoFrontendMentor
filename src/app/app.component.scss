@@ -39,6 +39,17 @@
     font-size: 14px;
   }
 
+  .attribution {
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    font-size: 11px;
+    text-align: center;
+    a {
+      color: $color-primary;
+    }
+  }
+
   &[data-theme="light"] {
     background-color: $gray-1;
     @media (min-width: 768px) {
@@ -51,6 +62,10 @@
 
     .hint {
       color: $gray-blue-3;
+    }
+
+    .attribution {
+      color: black;
     }
   }
 
@@ -66,6 +81,10 @@
 
     .hint {
       color: $dark-gray-blue-6;
+    }
+
+    .attribution {
+      color: white;
     }
   }
 }
