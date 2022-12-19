@@ -38,10 +38,10 @@ Users should be able to:
 ### Screenshots
 
 Dark mode
-![Dark mode](./screenshots/dark_mode.png)
+![Dark mode](https://github.com/szjanecki/todoFrontendMentor/blob/master/Screenshots/Dark_mode.png)
 
 Light mode
-![Light mode](./screenshots/light_mode.png)
+![Light mode](https://github.com/szjanecki/todoFrontendMentor/blob/master/Screenshots/Light_mode.png)
 
 ### Links
 
