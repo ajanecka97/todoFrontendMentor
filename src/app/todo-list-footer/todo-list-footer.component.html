@@ -1,34 +1,59 @@
-<div class="footer">
-  <div class="item-count">
-    {{ todoService.activeTodosCount$ | async }} items left
+<ng-container *ngIf="todoService.activeFilter$ | async; let filter">
+  <div class="footer-main">
+    <div class="item-count">
+      {{ todoService.activeTodosCount$ | async }} items left
+    </div>
+    <div class="filter-container">
+      <button
+        class="text-button"
+        [class.active-filter]="filter === todoFilter.All"
+        (click)="todoService.setFilter(todoFilter.All)"
+      >
+        All
+      </button>
+      <button
+        class="text-button"
+        [class.active-filter]="filter === todoFilter.Active"
+        (click)="todoService.setFilter(todoFilter.Active)"
+      >
+        Active
+      </button>
+      <button
+        class="text-button"
+        [class.active-filter]="filter === todoFilter.Completed"
+        (click)="todoService.setFilter(todoFilter.Completed)"
+      >
+        Completed
+      </button>
+    </div>
+    <button class="text-button" (click)="todoService.clearCompleted()">
+      Clear completed
+    </button>
   </div>
-  <div
-    *ngIf="todoService.activeFilter$ | async; let filter"
-    class="filter-container"
-  >
-    <button
-      class="text-button"
-      [class.active-filter]="filter === todoFilter.All"
-      (click)="todoService.setFilter(todoFilter.All)"
-    >
-      All
-    </button>
-    <button
-      class="text-button"
-      [class.active-filter]="filter === todoFilter.Active"
-      (click)="todoService.setFilter(todoFilter.Active)"
-    >
-      Active
-    </button>
-    <button
-      class="text-button"
-      [class.active-filter]="filter === todoFilter.Completed"
-      (click)="todoService.setFilter(todoFilter.Completed)"
-    >
-      Completed
-    </button>
+
+  <div class="footer-mobile">
+    <div class="filter-container-mobile">
+      <button
+        class="text-button"
+        [class.active-filter]="filter === todoFilter.All"
+        (click)="todoService.setFilter(todoFilter.All)"
+      >
+        All
+      </button>
+      <button
+        class="text-button"
+        [class.active-filter]="filter === todoFilter.Active"
+        (click)="todoService.setFilter(todoFilter.Active)"
+      >
+        Active
+      </button>
+      <button
+        class="text-button"
+        [class.active-filter]="filter === todoFilter.Completed"
+        (click)="todoService.setFilter(todoFilter.Completed)"
+      >
+        Completed
+      </button>
+    </div>
   </div>
-  <button class="text-button" (click)="todoService.clearCompleted()">
-    Clear completed
-  </button>
-</div>
+</ng-container>
