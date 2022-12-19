@@ -1,4 +1,4 @@
-import { TodoFilter, TodoItem } from './app.models';
+import { TodoFilter, TodoItem } from '../app.models';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, combineLatest, map, Observable, tap } from 'rxjs';
 import { LocalStorageService } from './local-storage.service';

@@ -9,11 +9,23 @@ import { NgScrollbarModule } from 'ngx-scrollbar';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ThemeSwitcherComponent } from './theme-switcher/theme-switcher.component';
-import { ThemableDirective } from './themable.directive';
+import { ThemableDirective } from './directives/themable.directive';
 
 @NgModule({
-  declarations: [AppComponent, TodoItemComponent, TodoListFooterComponent, ThemeSwitcherComponent, ThemableDirective],
-  imports: [BrowserModule, FormsModule, NgScrollbarModule, DragDropModule, BrowserAnimationsModule],
+  declarations: [
+    AppComponent,
+    TodoItemComponent,
+    TodoListFooterComponent,
+    ThemeSwitcherComponent,
+    ThemableDirective,
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    NgScrollbarModule,
+    DragDropModule,
+    BrowserAnimationsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -1,4 +1,4 @@
-import { ThemeService } from './theme.service';
+import { ThemeService } from '../services/theme.service';
 import { Directive, ElementRef, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 

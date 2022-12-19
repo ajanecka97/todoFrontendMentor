@@ -1,4 +1,4 @@
-import { ThemeService } from './../theme.service';
+import { ThemeService } from '../services/theme.service';
 import { Component } from '@angular/core';
 
 @Component({

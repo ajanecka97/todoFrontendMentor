@@ -1,4 +1,4 @@
-import { TodoService } from './todo.service';
+import { TodoService } from './services/todo.service';
 import { Component, OnInit } from '@angular/core';
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
 
