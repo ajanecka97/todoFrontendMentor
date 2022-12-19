@@ -35,7 +35,15 @@ export class TodoService {
     );
     this.activeFilter$ = this.filterSubject.asObservable();
 
-    this.todosSubject.next(localStorageService.get('todos') || []);
+    const wereTodosSeeded = localStorageService.get('todosSeeded');
+    const todos = localStorageService.get('todos');
+
+    if (!wereTodosSeeded && !todos) {
+      this.seedTodos();
+      localStorageService.set('todosSeeded', true);
+    } else {
+      this.todosSubject.next(todos);
+    }
 
     this.todos$.subscribe((todos) => {
       localStorageService.set('todos', todos);
@@ -86,5 +94,25 @@ export class TodoService {
 
   public setFilter(filter: TodoFilter) {
     this.filterSubject.next(filter);
+  }
+
+  private seedTodos() {
+    this.todosSubject.next([
+      {
+        id: 1,
+        title: 'Learn Angular',
+        isCompleted: true,
+      },
+      {
+        id: 2,
+        title: 'Learn RxJS',
+        isCompleted: false,
+      },
+      {
+        id: 3,
+        title: 'Learn NgRx',
+        isCompleted: false,
+      },
+    ]);
   }
 }
